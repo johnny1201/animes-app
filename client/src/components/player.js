@@ -39,6 +39,7 @@ function Player() {
 
   const isFirstEpisode = parseInt(id) === 1;
   const isLastEpisode = parseInt(id) === totalEpisodes;
+  const formatted = formatEpisodeNumber(episode, minDigits);
 
   return (
     <div className="player-container" key={`${anime}-${id}`}>

@@ -19,18 +19,21 @@ function Home() {
       name: "Naruto Shippuden",
       image: "https://cdn.myanimelist.net/images/anime/5/17407.jpg",
       episodes: 500,
+      minDigits: 2,
     },
     {
       id: 2,
       name: "Naruto",
       image: "https://cdn.myanimelist.net/images/anime/13/17405.jpg",
       episodes: 220,
+      minDigits: 2,
     },
     {
       id: 3,
       name: "OnePiece",
       image: "https://cdn.myanimelist.net/images/anime/6/73245.jpg",
       episodes: 1106,
+      minDigits: 2,
     },
   ];
 

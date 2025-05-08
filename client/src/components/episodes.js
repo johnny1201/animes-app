@@ -1,11 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { formatEpisodeNumber } from "../utils/formatEpisode";
 import "./episodes.css";
 
 function Episodes() {
   const navigate = useNavigate();
   const animeData = JSON.parse(sessionStorage.getItem("anime"));
-  const { name, episodes } = animeData;
+  const { name, episodes, minDigits } = animeData;
   const episodeList = Array.from({ length: episodes }, (_, i) => i + 1);
 
   return (
@@ -22,20 +23,21 @@ function Episodes() {
       </header>
 
       <div className="episode-list">
-        {episodeList.map((episode) => (
-          <div
-            className="episode-card"
-            key={episode}
-            onClick={() =>
-              navigate(
-                `/player/${name}/${episode < 10 ? `0${episode}` : episode}`
-              )
-            }
-          >
-            <h3>Episódio {episode < 10 ? `0${episode}` : episode}</h3>
-            <p>Assistir</p>
-          </div>
-        ))}
+        {episodeList.map((episode) => {
+          const formattedEpisode = formatEpisodeNumber(episode, minDigits);
+          return (
+            <div
+              className="episode-card"
+              key={episode}
+              onClick={() =>
+                navigate(`/player/${name}/${formattedEpisode}`)
+              }
+            >
+              <h3>Episódio {formattedEpisode}</h3>
+              <p>Assistir</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
