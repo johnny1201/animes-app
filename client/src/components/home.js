@@ -35,6 +35,13 @@ function Home() {
       episodes: 1106,
       minDigits: 2,
     },
+    {
+      id: 4,
+      name: "One Piece Dublado",
+      image:  "https://cdn.myanimelist.net/images/anime/6/73245.jpg",
+      episodes: 628,
+      minDigits: 3,
+    },
   ];
 
   return (
