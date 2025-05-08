@@ -46,7 +46,7 @@ function Home() {
       id: 5,
       name: "Jujutsu Kaisen",
       image: "https://animesonline.cloud/wp-content/uploads/2023/12/coMNNwjHY4BZTqMIsklanMf2Wp7-200x300.jpg",
-      episodes: 20,
+      episodes: 24,
       minDigits: 2,
     },
   ];
