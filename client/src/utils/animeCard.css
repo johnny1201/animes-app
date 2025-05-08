@@ -1,0 +1,21 @@
+/* utils/animecard.css */
+.anime-card {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  .anime-card:hover {
+    transform: scale(1.05);
+  }
+  .anime-card img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+  

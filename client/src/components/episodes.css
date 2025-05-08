@@ -1,0 +1,76 @@
+/* components/episodes.css */
+.episodes-container {
+    background-color: #121212;
+    color: white;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .back-button {
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .back-button.left {
+    left: 20px;
+  }
+  
+  .back-button.right {
+    right: 20px;
+  }
+  
+  .episodes-header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
+  
+  .episode-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    flex-grow: 1;
+    overflow-y: scroll; /* Permite rolar, mas com a barra escondida */
+    margin-top: 30px;
+    max-height: calc(100vh - 120px); /* Garante que a área de lista de episódios não ultrapasse a altura da tela */
+  }
+  
+  /* Esconde a barra de rolagem mas mantém a rolagem funcional */
+  .episode-list::-webkit-scrollbar {
+    display: none; /* Esconde a barra de rolagem */
+  }
+  
+  .episode-card {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .episode-card:hover {
+    background-color: #444;
+  }
+  
+  h3 {
+    margin: 0;
+  }
+  
+  p {
+    font-size: 0.9rem;
+    color: #bbb;
+  }
+  

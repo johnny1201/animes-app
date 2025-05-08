@@ -1,0 +1,92 @@
+/* components/home.css */
+
+
+.home-container {
+  background-color: #121212; /* Fundo escuro */
+  color: white;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.home-header {
+  padding: 20px;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: space-between; /* Garante que o título e o nome do usuário fiquem nos extremos */
+  align-items: center;
+  flex-wrap: wrap; /* Permite que os elementos se movam para linhas diferentes se necessário */
+}
+
+.home-header h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+  flex-grow: 1; /* Faz o título ocupar o espaço restante da linha */
+  display: flex;
+  justify-content: center;
+}
+
+.username {
+  font-size: 1.2rem;
+  color: white;
+  margin: 0;
+  padding-left: 20px; /* Dá um pequeno espaço entre o nome de usuário e a borda */
+  width: 100%; /* Faz o nome do usuário ocupar uma linha inteira, garantindo que o título não quebre */
+  text-align: right; /* Alinha o nome do usuário à direita */
+}
+
+.home-main {
+  padding: 20px;
+  background-color: #121212;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* <- Deixa o conteúdo expandir */
+  justify-content: flex-start;
+  height: auto; /* Evita restrição vertical */
+}
+
+.home-main p {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.anime-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Usando auto-fill para adicionar colunas sem encolher */
+  gap: 20px; /* Garantindo espaçamento fixo de 20px entre os cards */
+  margin-top: 30px;
+}
+
+.anime-card {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 220px; /* Fixando a largura dos cards para 220px */
+  box-sizing: border-box; /* Garante que o padding não afete o tamanho do card */
+}
+
+.anime-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.3);
+}
+
+.anime-card img {
+  width: 100%; /* A largura da imagem será 100% do card */
+  height: auto; /* Ajusta automaticamente a altura para manter a proporção */
+  aspect-ratio: 12/16; /* A proporção de 16:9 é próxima da proporção 0.58, então isso ajusta a altura em relação à largura */
+}
+
+.anime-card h3 {
+  margin: 10px;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0; /* Remove qualquer padding no título */
+}
