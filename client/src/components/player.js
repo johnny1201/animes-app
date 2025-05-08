@@ -14,7 +14,7 @@ function Player() {
   const animeData = JSON.parse(sessionStorage.getItem("anime"));
   const totalEpisodes = animeData ? animeData.episodes : 0; // Total de episódios ou 0 caso não exista
 
-  const videoUrl = `https://mangas.cloud/Animes/Letra-${firstLetter}/${animeName}/${id}.mp4`;
+  const videoUrl = `https://animes-app-7sym.onrender.com/api/video/${anime}/${id}`;
 
   const handleNext = () => {
     let nextEpisode = parseInt(id) + 1;

@@ -1,7 +1,6 @@
 {
   "name": "login-page",
   "version": "1.0.0",
-  "homepage": "https://johnny1201.github.io/react-login",
   "description": "Projeto de login",
   "main": "index.js",
   "dependencies": {
