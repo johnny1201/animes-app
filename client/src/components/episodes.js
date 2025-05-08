@@ -6,6 +6,11 @@ import "./episodes.css";
 function Episodes() {
   const navigate = useNavigate();
   const animeData = JSON.parse(sessionStorage.getItem("anime"));
+
+  if (!animeData) {
+    return <div>Erro: Dados do anime não encontrados. Por favor, selecione um anime.</div>;
+  }
+
   const { name, episodes, minDigits } = animeData;
   const episodeList = Array.from({ length: episodes }, (_, i) => i + 1);
 

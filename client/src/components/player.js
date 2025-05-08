@@ -10,8 +10,14 @@ function Player() {
 
   const animeName = decodeURIComponent(anime);
   const animeData = JSON.parse(sessionStorage.getItem("anime"));
+
+  if (!animeData) {
+    return <div>Erro: Dados do anime não encontrados. Por favor, selecione um anime.</div>;
+  }
+
+  const { episodes, minDigits } = animeData;
+
   const totalEpisodes = animeData?.episodes || 0;
-  const minDigits = animeData?.minDigits || 2;
 
   const episodeNumber = parseInt(id, 10); // Garantir que está como número
   const formattedId = formatEpisodeNumber(episodeNumber, minDigits); // Reformatar sempre que exibir
