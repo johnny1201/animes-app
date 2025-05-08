@@ -49,6 +49,20 @@ function Home() {
       episodes: 24,
       minDigits: 2,
     },
+    {
+      id: 6,
+      name: "Dragon Ball Z",
+      image: "https://br.web.img3.acsta.net/c_310_420/pictures/16/03/01/16/59/300795.jpg",
+      episodes: 291,
+      minDigits: 2,
+    },
+    {
+      id: 7,
+      name: "Dragon Ball GT",
+      image: "https://m.media-amazon.com/images/M/MV5BMWQyMzQwNzQtZTgxYy00OGY0LTg0MmItZjNkNTk3NjgyYmJjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      episodes: 64,
+      mindigits: 01,
+    }
   ];
 
   return (
