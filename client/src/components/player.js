@@ -1,52 +1,46 @@
 // player.js
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { formatEpisodeNumber } from "../utils/formatEpisode";
-import "./player.css"; // Importando o CSS
+import "./player.css";
 
 function Player() {
   const { anime, id } = useParams();
   const navigate = useNavigate();
 
   const animeName = decodeURIComponent(anime);
-  const firstLetter = animeName.trim().charAt(0).toUpperCase();
-
-  // Obter o total de episódios do sessionStorage
   const animeData = JSON.parse(sessionStorage.getItem("anime"));
-  const totalEpisodes = animeData ? animeData.episodes : 0; // Total de episódios ou 0 caso não exista
+  const totalEpisodes = animeData?.episodes || 0;
+  const minDigits = animeData?.minDigits || 2;
 
   const videoUrl = `https://animes-app-7sym.onrender.com/api/video/${anime}/${id}`;
 
   const handleNext = () => {
-    let nextEpisode = parseInt(id) + 1;
-    nextEpisode = nextEpisode < 10 ? `0${nextEpisode}` : nextEpisode;
-    const encodedAnimeName = encodeURIComponent(animeName);
-    navigate(`/player/${encodedAnimeName}/${nextEpisode}`, { replace: true });
+    const next = parseInt(id, 10) + 1;
+    const formatted = formatEpisodeNumber(next, minDigits);
+    navigate(`/player/${encodeURIComponent(animeName)}/${formatted}`, { replace: true });
   };
 
   const handlePrevious = () => {
-    let prevEpisode = parseInt(id) - 1;
-    if (prevEpisode > 0) {
-      prevEpisode = prevEpisode < 10 ? `0${prevEpisode}` : prevEpisode;
-      const encodedAnimeName = encodeURIComponent(animeName);
-      navigate(`/player/${encodedAnimeName}/${prevEpisode}`, { replace: true });
+    const prev = parseInt(id, 10) - 1;
+    if (prev > 0) {
+      const formatted = formatEpisodeNumber(prev, minDigits);
+      navigate(`/player/${encodeURIComponent(animeName)}/${formatted}`, { replace: true });
     }
   };
 
   const handleBack = () => {
-    // Voltar para a página de episódios
     navigate(`/episodes/${encodeURIComponent(anime)}`);
   };
 
-  const isFirstEpisode = parseInt(id) === 1;
-  const isLastEpisode = parseInt(id) === totalEpisodes;
-  const formatted = formatEpisodeNumber(episode, minDigits);
+  const isFirstEpisode = parseInt(id, 10) === 1;
+  const isLastEpisode = parseInt(id, 10) === totalEpisodes;
 
   return (
     <div className="player-container" key={`${anime}-${id}`}>
       <header className="player-header">
         <div className="header-buttons">
-          <button onClick={() => navigate("/episodes")} className="back-button left">
+          <button onClick={handleBack} className="back-button left">
             <i className="fas fa-undo-alt"></i>
           </button>
           <button onClick={() => navigate("/home")} className="back-button right">
@@ -62,6 +56,7 @@ function Player() {
           Seu navegador não suporta a tag de vídeo.
         </video>
       </div>
+
       <div className="controls-container">
         <button onClick={handlePrevious} className="control-button" disabled={isFirstEpisode}>
           Anterior
