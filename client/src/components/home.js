@@ -61,7 +61,7 @@ function Home() {
       name: "Dragon Ball GT",
       image: "https://m.media-amazon.com/images/M/MV5BMWQyMzQwNzQtZTgxYy00OGY0LTg0MmItZjNkNTk3NjgyYmJjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
       episodes: 64,
-      mindigits: 01,
+      mindigits: 2,
     },
   ];
 
