@@ -1,6 +1,7 @@
 // player.js
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { formatEpisodeNumber } from "../utils/formatEpisode";
 import "./player.css"; // Importando o CSS
 
 function Player() {
