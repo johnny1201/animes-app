@@ -13,16 +13,21 @@ function Player() {
   const totalEpisodes = animeData?.episodes || 0;
   const minDigits = animeData?.minDigits || 2;
 
-  const videoUrl = `https://animes-app-7sym.onrender.com/api/video/${anime}/${id}`;
+  const episodeNumber = parseInt(id, 10); // Garantir que está como número
+  const formattedId = formatEpisodeNumber(episodeNumber, minDigits); // Reformatar sempre que exibir
+
+  const videoUrl = `https://animes-app-7sym.onrender.com/api/video/${anime}/${formattedId}`;
 
   const handleNext = () => {
-    const next = parseInt(id, 10) + 1;
-    const formatted = formatEpisodeNumber(next, minDigits);
-    navigate(`/player/${encodeURIComponent(animeName)}/${formatted}`, { replace: true });
+    const next = episodeNumber + 1;
+    if (next <= totalEpisodes) {
+      const formatted = formatEpisodeNumber(next, minDigits);
+      navigate(`/player/${encodeURIComponent(animeName)}/${formatted}`, { replace: true });
+    }
   };
 
   const handlePrevious = () => {
-    const prev = parseInt(id, 10) - 1;
+    const prev = episodeNumber - 1;
     if (prev > 0) {
       const formatted = formatEpisodeNumber(prev, minDigits);
       navigate(`/player/${encodeURIComponent(animeName)}/${formatted}`, { replace: true });
@@ -33,11 +38,11 @@ function Player() {
     navigate(`/episodes/${encodeURIComponent(anime)}`);
   };
 
-  const isFirstEpisode = parseInt(id, 10) === 1;
-  const isLastEpisode = parseInt(id, 10) === totalEpisodes;
+  const isFirstEpisode = episodeNumber === 1;
+  const isLastEpisode = episodeNumber === totalEpisodes;
 
   return (
-    <div className="player-container" key={`${anime}-${id}`}>
+    <div className="player-container" key={`${anime}-${formattedId}`}>
       <header className="player-header">
         <div className="header-buttons">
           <button onClick={handleBack} className="back-button left">
@@ -47,7 +52,7 @@ function Player() {
             <i className="fas fa-home"></i>
           </button>
         </div>
-        <h2>{animeName} - Episódio {id}</h2>
+        <h2>{animeName} - Episódio {formattedId}</h2>
       </header>
 
       <div className="video-container">
