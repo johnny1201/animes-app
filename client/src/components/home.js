@@ -77,12 +77,6 @@ function Home() {
       episodes: 25,
       minDigits: 2,
     },
-    {
-      id: 10,
-      name: "Dragon Ball Daima",
-      image: "https://tomatoanimes.app/wp-content/uploads/2025/05/qlLJvJO8rsltmnWWbKgT13hP90I-552x828.jpg",
-      episodes: 
-    }
   ];
 
   return (
