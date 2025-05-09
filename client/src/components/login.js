@@ -13,6 +13,8 @@ function Login() {
     joaomiguel: "jm123",
     johnnymichael: "jm123",
     victordaniel: "vd123",
+    rafaelsoares: "rs123",
+    rubensmiguel: "rb123",
   };
 
   const handleSubmit = (e) => {
