@@ -66,14 +66,14 @@ function Home() {
     {
       id: 8,
       name: "Yu Yu Hakusho",
-      image: "https://tomatoanimes.app/wp-content/uploads/2025/03/111372l.jpg",
+      image: "https://m.media-amazon.com/images/I/71-jxfP-nBL.jpg",
       episodes: 112,
       minDigits: 2,
     },
     {
       id: 9,
       name: "Shingeki no Kyojin" ,
-      image: "https://tomatoanimes.app/wp-content/uploads/2025/01/47347l.jpg",
+      image: "https://cinema10.com.br/upload/series/series_2612_attack.jpg",
       episodes: 25,
       minDigits: 2,
     },
