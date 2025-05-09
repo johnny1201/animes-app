@@ -63,6 +63,26 @@ function Home() {
       episodes: 64,
       mindigits: 2,
     },
+    {
+      id: 8,
+      name: "Yu Yu Hakusho",
+      image: "https://tomatoanimes.app/wp-content/uploads/2025/03/111372l.jpg",
+      episodes: 112,
+      minDigits: 2,
+    },
+    {
+      id: 9,
+      name: "Shingeki no Kyojin" ,
+      image: "https://tomatoanimes.app/wp-content/uploads/2025/01/47347l.jpg",
+      episodes: 25,
+      minDigits: 2,
+    },
+    {
+      id: 10,
+      name: "Dragon Ball Daima",
+      image: "https://tomatoanimes.app/wp-content/uploads/2025/05/qlLJvJO8rsltmnWWbKgT13hP90I-552x828.jpg",
+      episodes: 
+    }
   ];
 
   return (
